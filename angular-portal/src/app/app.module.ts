@@ -14,7 +14,7 @@ import { AssetDetailsOverviewComponent } from './components/asset-details-overvi
 
 @NgModule({
   declarations: [
-    AppComponent, AssetSearchComponent, AssetDetailsComponent, AssetDetailsCommentsComponent, AssetDetailsHistoryComponent, AssetDetailsOverviewComponent, HeaderComponent
+    AppComponent, HeaderComponent
   ],
   imports: [
     BrowserModule,
