@@ -8,10 +8,11 @@ import { AssetDetailsComponent } from './components/assetDetails/assetDetails.co
 import { AssetDetailsOverviewComponent } from './components/assetDetailsOverview/assetDetailsOverview.component';
 import { AssetDetailsHistoryComponent } from './components/assetDetailsHistory/assetDetailsHistory.component';
 import { AssetDetailsCommentsComponent } from './components/assetDetailsComments/assetDetailsComments.component';
+import { AssetSearchComponent } from './components/asset-search/asset-search.component';
 
 @NgModule({
   declarations: [
-    AppComponent, AssetDetailsComponent, AssetDetailsOverviewComponent, AssetDetailsHistoryComponent, AssetDetailsCommentsComponent
+    AppComponent, AssetDetailsComponent, AssetDetailsOverviewComponent, AssetDetailsHistoryComponent, AssetDetailsCommentsComponent, AssetSearchComponent
   ],
   imports: [
     BrowserModule,
