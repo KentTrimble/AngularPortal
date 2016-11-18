@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 
@@ -17,6 +18,7 @@ import { AssetDetailsOverviewComponent } from './components/asset-details-overvi
     AppComponent, AssetSearchComponent,AssetDetailsComponent, AssetDetailsCommentsComponent, AssetDetailsHistoryComponent, AssetDetailsOverviewComponent, HeaderComponent
   ],
   imports: [
+    routing,
     BrowserModule,
     FormsModule,
     HttpModule
