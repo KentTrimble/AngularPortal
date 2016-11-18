@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 import { AssetSearchComponent } from './components/asset-search/asset-search.component';
 import { AssetDetailsComponent } from './components/asset-details/asset-details.component';
@@ -23,7 +24,9 @@ import { AssetDetailsOverviewComponent } from './components/asset-details-overvi
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
