@@ -13,4 +13,8 @@ export class AssetService {
             new AssetListModel ("007", "Active", "ML", new Date(2022, 12, 31)),
         ]
     }
+
+    getAsset(guidAsset:string) {
+        return this.getAssetList().find(asset => asset.Code == guidAsset);
+    }
 }

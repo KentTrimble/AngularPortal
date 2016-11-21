@@ -1,36 +1,36 @@
-<h1 class="page-title">EL442</h1>
+<h1 class="page-title">{{objAsset.Code}}</h1>
 
-        <div class="card">
-            <h3 class="card-header hidden-print">EL442</h3>
+<div class="card">
+    <h3 class="card-header hidden-print">{{objAsset.Code}}</h3>
 
-            <div class="card-body">
-                <div class="tabs">
-                    <div class="tabs-menu hidden-print">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active">
-                                <a href="#overview" aria-controls="home" role="tab" data-toggle="tab">Overview</a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#history" aria-controls="settings" role="tab" data-toggle="tab">History</a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#comments" aria-controls="settings" role="tab" data-toggle="tab">Comments</a>
-                            </li>
-                        </ul>
-                    </div>
+    <div class="card-body">
+        <div class="tabs">
+            <div class="tabs-menu hidden-print">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#overview" aria-controls="home" role="tab" data-toggle="tab">Overview</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#history" aria-controls="settings" role="tab" data-toggle="tab">History</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#comments" aria-controls="settings" role="tab" data-toggle="tab">Comments</a>
+                    </li>
+                </ul>
+            </div>
 
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade in active" id="overview">
-                              <app-asset-details-overview></app-asset-details-overview>
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="history">
-                              <app-asset-details-history></app-asset-details-history>
-                        </div>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="overview">
+                    <app-asset-details-overview [objAssetModel]="objAsset"></app-asset-details-overview>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="history">
+                    <app-asset-details-history></app-asset-details-history>
+                </div>
 
-                        <div role="tabpanel" class="tab-pane fade" id="comments">
-                            <app-asset-details-comments></app-asset-details-comments>
-                        </div>
-                    </div>
+                <div role="tabpanel" class="tab-pane fade" id="comments">
+                    <app-asset-details-comments></app-asset-details-comments>
                 </div>
             </div>
         </div>
+    </div>
+</div>

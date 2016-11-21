@@ -1,61 +1,63 @@
-        <h1 class="page-title">View licenses</h1>
+<h1 class="page-title">View licenses</h1>
 
-        <div class="row">
-            <div class="col-md-6 col-xs-12 p-r-2">
-                <div class="search-group">
-                    <div class="dropdown dropdown-scale">
-                        <a href="#" class="btn btn-secondary" data-toggle="dropdown">Filter</a>
+<div class="row">
+    <div class="col-md-6 col-xs-12 p-r-2">
+        <div class="search-group">
+            <div class="dropdown dropdown-scale">
+                <a href="#" class="btn btn-secondary" data-toggle="dropdown">Filter</a>
 
-                        <div class="dropdown-menu dropdown-menu-white">
-                            <h3>Show all licenses where</h3>
-                            <div class="form-group">
-                                <select name="" class="form-control">
+                <div class="dropdown-menu dropdown-menu-white">
+                    <h3>Show all licenses where</h3>
+                    <div class="form-group">
+                        <select name="" class="form-control">
                                     <option value="">Select filter</option>
                                     <option value="active">Status</option>
                                     <option value="active">Type</option>
                                 </select>
-                            </div>
-                            <div class="form-group">
-                                <select name="" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <select name="" class="form-control">
                                     <option value="">Select a value</option>
                                     <option value="active">Active</option>
                                     <option value="active">Inactive</option>
                                 </select>
-                            </div>
-                            <button class="btn btn-success btn-lg m-t-1">Add filter</button>
-                        </div>
                     </div>
-
-                    <div class="search-input">
-                        <input type="text" class="form-control" placeholder="Search licenses">
-                        <button type="submit" class="nofocus"></button>
-                        <button type="button" class="nofocus"></button>
-                    </div>
-
-                    <div class="filters m-t-1">
-                        <div class="label label-default">Default <a class="close" href="#" data-dismiss="label"></a></div>
-                    </div>
+                    <button class="btn btn-success btn-lg m-t-1">Add filter</button>
                 </div>
+            </div>
 
-                <div class="table-responsive">
-                    <table class="table borderless-first-row" id="assets-list-table">
-                        <thead>
-                            <tr>
-                                <th>Code</th>
-                                <th>Status</th>
-                                <th>Type</th>
-                                <th>Expiry Date</th>
-                            </tr>
-                        </thead>
+            <div class="search-input">
+                <input type="text" class="form-control" placeholder="Search licenses">
+                <button type="submit" class="nofocus"></button>
+                <button type="button" class="nofocus"></button>
+            </div>
 
-                        <tbody>
-                            <tr class="row-interactive" *ngFor="let asset of assets">
-                                <td><a href="l.licenses.single.html">{{asset.Code}}</a></td>
-                                <td class="highlight">{{asset.StatusDescription}}</td>
-                                <td>{{asset.TypeDescription}}</td>
-                                <td>{{asset.ExpiryDate | date: 'dd/MM/yyyy'}}</td>
-                            </tr>
-<!--                            <tr class="row-interactive">
+            <div class="filters m-t-1">
+                <div class="label label-default">Default
+                    <a class="close" href="#" data-dismiss="label"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table borderless-first-row" id="assets-list-table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Status</th>
+                        <th>Type</th>
+                        <th>Expiry Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="row-interactive" *ngFor="let asset of assets">
+                        <td (click)="onAssetSelection(asset)">{{asset.Code}}</td>
+                        <td class="highlight">{{asset.StatusDescription}}</td>
+                        <td>{{asset.TypeDescription}}</td>
+                        <td>{{asset.ExpiryDate | date: 'dd/MM/yyyy'}}</td>
+                    </tr>
+                    <!--                            <tr class="row-interactive">
                                     <td><a href="l.licenses.single.html">EL251</a></td>
                                     <td class="highlight">Active</td>
                                     <td>EL</td>
@@ -128,324 +130,324 @@
                                     <td>4/27/2014 12:00:00 AM</td>
                                 </tr>
 -->
-                        </tbody>
-                    </table>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-6 hidden-sm hidden-xs p-l-2">
+        <div class="assets-list-map" id="assets-list-map">
+            <img src="img/maps/585x640.png" alt="" height="640" width="585" class="img-responsive">
+
+            <div class="card animated borderless hidden arrow-down">
+                <h3 class="card-header">EL251</h3>
+                <h4 class="card-status-header card-status-header-red">Overdue and upcoming obligations</h4>
+
+                <div class="card-body m-t-2">
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd>Myakuja A</dd>
+
+                        <dt>Type</dt>
+                        <dd>Exploration License</dd>
+
+                        <dt>Status</dt>
+                        <dd>Active</dd>
+
+                        <dt>Owner</dt>
+                        <dd>Peter Janali Mutie</dd>
+
+                        <dt>Commodities</dt>
+                        <dd>Gemstones</dd>
+                    </dl>
+
+                    <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
                 </div>
             </div>
 
-            <div class="col-md-6 hidden-sm hidden-xs p-l-2">
-                <div class="assets-list-map" id="assets-list-map">
-                    <img src="img/maps/585x640.png" alt="" height="640" width="585" class="img-responsive">
+            <div class="card animated borderless hidden arrow-down">
+                <h3 class="card-header">SPL/2015/0034</h3>
+                <h4 class="card-status-header card-status-header-green">This license is in order</h4>
 
-                                            <div class="card animated borderless hidden arrow-down">
-                            <h3 class="card-header">EL251</h3>
-                            <h4 class="card-status-header card-status-header-red">Overdue and upcoming obligations</h4>
+                <div class="card-body m-t-2">
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd>Myakuja A</dd>
 
-                            <div class="card-body m-t-2">
-                                <dl class="dl-horizontal">
-                                    <dt>Name</dt>
-                                    <dd>Myakuja A</dd>
+                        <dt>Type</dt>
+                        <dd>Exploration License</dd>
 
-                                    <dt>Type</dt>
-                                    <dd>Exploration License</dd>
+                        <dt>Status</dt>
+                        <dd>Active</dd>
 
-                                    <dt>Status</dt>
-                                    <dd>Active</dd>
+                        <dt>Owner</dt>
+                        <dd>Peter Janali Mutie</dd>
 
-                                    <dt>Owner</dt>
-                                    <dd>Peter Janali Mutie</dd>
+                        <dt>Commodities</dt>
+                        <dd>Gemstones</dd>
+                    </dl>
 
-                                    <dt>Commodities</dt>
-                                    <dd>Gemstones</dd>
-                                </dl>
+                    <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
+                </div>
+            </div>
+            <div class="card animated borderless hidden arrow-down">
+                <h3 class="card-header">EL251</h3>
+                <h4 class="card-status-header card-status-header-red">Overdue and upcoming obligations</h4>
 
-                                <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
-                            </div>
-                        </div>
+                <div class="card-body m-t-2">
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd>Myakuja A</dd>
+
+                        <dt>Type</dt>
+                        <dd>Exploration License</dd>
 
-                        <div class="card animated borderless hidden arrow-down">
-                            <h3 class="card-header">SPL/2015/0034</h3>
-                            <h4 class="card-status-header card-status-header-green">This license is in order</h4>
+                        <dt>Status</dt>
+                        <dd>Active</dd>
 
-                            <div class="card-body m-t-2">
-                                <dl class="dl-horizontal">
-                                    <dt>Name</dt>
-                                    <dd>Myakuja A</dd>
+                        <dt>Owner</dt>
+                        <dd>Peter Janali Mutie</dd>
 
-                                    <dt>Type</dt>
-                                    <dd>Exploration License</dd>
+                        <dt>Commodities</dt>
+                        <dd>Gemstones</dd>
+                    </dl>
 
-                                    <dt>Status</dt>
-                                    <dd>Active</dd>
+                    <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
+                </div>
+            </div>
 
-                                    <dt>Owner</dt>
-                                    <dd>Peter Janali Mutie</dd>
+            <div class="card animated borderless hidden arrow-down">
+                <h3 class="card-header">SPL/2015/0034</h3>
+                <h4 class="card-status-header card-status-header-green">This license is in order</h4>
 
-                                    <dt>Commodities</dt>
-                                    <dd>Gemstones</dd>
-                                </dl>
+                <div class="card-body m-t-2">
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd>Myakuja A</dd>
 
-                                <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
-                            </div>
-                        </div>
-                                            <div class="card animated borderless hidden arrow-down">
-                            <h3 class="card-header">EL251</h3>
-                            <h4 class="card-status-header card-status-header-red">Overdue and upcoming obligations</h4>
+                        <dt>Type</dt>
+                        <dd>Exploration License</dd>
 
-                            <div class="card-body m-t-2">
-                                <dl class="dl-horizontal">
-                                    <dt>Name</dt>
-                                    <dd>Myakuja A</dd>
+                        <dt>Status</dt>
+                        <dd>Active</dd>
 
-                                    <dt>Type</dt>
-                                    <dd>Exploration License</dd>
+                        <dt>Owner</dt>
+                        <dd>Peter Janali Mutie</dd>
 
-                                    <dt>Status</dt>
-                                    <dd>Active</dd>
+                        <dt>Commodities</dt>
+                        <dd>Gemstones</dd>
+                    </dl>
 
-                                    <dt>Owner</dt>
-                                    <dd>Peter Janali Mutie</dd>
+                    <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
+                </div>
+            </div>
+            <div class="card animated borderless hidden arrow-down">
+                <h3 class="card-header">EL251</h3>
+                <h4 class="card-status-header card-status-header-red">Overdue and upcoming obligations</h4>
 
-                                    <dt>Commodities</dt>
-                                    <dd>Gemstones</dd>
-                                </dl>
+                <div class="card-body m-t-2">
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd>Myakuja A</dd>
 
-                                <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
-                            </div>
-                        </div>
+                        <dt>Type</dt>
+                        <dd>Exploration License</dd>
 
-                        <div class="card animated borderless hidden arrow-down">
-                            <h3 class="card-header">SPL/2015/0034</h3>
-                            <h4 class="card-status-header card-status-header-green">This license is in order</h4>
+                        <dt>Status</dt>
+                        <dd>Active</dd>
 
-                            <div class="card-body m-t-2">
-                                <dl class="dl-horizontal">
-                                    <dt>Name</dt>
-                                    <dd>Myakuja A</dd>
+                        <dt>Owner</dt>
+                        <dd>Peter Janali Mutie</dd>
 
-                                    <dt>Type</dt>
-                                    <dd>Exploration License</dd>
+                        <dt>Commodities</dt>
+                        <dd>Gemstones</dd>
+                    </dl>
 
-                                    <dt>Status</dt>
-                                    <dd>Active</dd>
+                    <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
+                </div>
+            </div>
 
-                                    <dt>Owner</dt>
-                                    <dd>Peter Janali Mutie</dd>
+            <div class="card animated borderless hidden arrow-down">
+                <h3 class="card-header">SPL/2015/0034</h3>
+                <h4 class="card-status-header card-status-header-red">This license is in order</h4>
 
-                                    <dt>Commodities</dt>
-                                    <dd>Gemstones</dd>
-                                </dl>
+                <div class="card-body m-t-2">
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd>Myakuja A</dd>
 
-                                <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
-                            </div>
-                        </div>
-                                            <div class="card animated borderless hidden arrow-down">
-                            <h3 class="card-header">EL251</h3>
-                            <h4 class="card-status-header card-status-header-red">Overdue and upcoming obligations</h4>
-
-                            <div class="card-body m-t-2">
-                                <dl class="dl-horizontal">
-                                    <dt>Name</dt>
-                                    <dd>Myakuja A</dd>
-
-                                    <dt>Type</dt>
-                                    <dd>Exploration License</dd>
-
-                                    <dt>Status</dt>
-                                    <dd>Active</dd>
+                        <dt>Type</dt>
+                        <dd>Exploration License</dd>
 
-                                    <dt>Owner</dt>
-                                    <dd>Peter Janali Mutie</dd>
+                        <dt>Status</dt>
+                        <dd>Active</dd>
 
-                                    <dt>Commodities</dt>
-                                    <dd>Gemstones</dd>
-                                </dl>
+                        <dt>Owner</dt>
+                        <dd>Peter Janali Mutie</dd>
 
-                                <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
-                            </div>
-                        </div>
+                        <dt>Commodities</dt>
+                        <dd>Gemstones</dd>
+                    </dl>
 
-                        <div class="card animated borderless hidden arrow-down">
-                            <h3 class="card-header">SPL/2015/0034</h3>
-                            <h4 class="card-status-header card-status-header-red">This license is in order</h4>
+                    <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
+                </div>
+            </div>
+            <div class="card animated borderless hidden arrow-down">
+                <h3 class="card-header">EL251</h3>
+                <h4 class="card-status-header card-status-header-red">Overdue and upcoming obligations</h4>
 
-                            <div class="card-body m-t-2">
-                                <dl class="dl-horizontal">
-                                    <dt>Name</dt>
-                                    <dd>Myakuja A</dd>
+                <div class="card-body m-t-2">
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd>Myakuja A</dd>
 
-                                    <dt>Type</dt>
-                                    <dd>Exploration License</dd>
+                        <dt>Type</dt>
+                        <dd>Exploration License</dd>
 
-                                    <dt>Status</dt>
-                                    <dd>Active</dd>
+                        <dt>Status</dt>
+                        <dd>Active</dd>
 
-                                    <dt>Owner</dt>
-                                    <dd>Peter Janali Mutie</dd>
+                        <dt>Owner</dt>
+                        <dd>Peter Janali Mutie</dd>
 
-                                    <dt>Commodities</dt>
-                                    <dd>Gemstones</dd>
-                                </dl>
+                        <dt>Commodities</dt>
+                        <dd>Gemstones</dd>
+                    </dl>
 
-                                <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
-                            </div>
-                        </div>
-                                            <div class="card animated borderless hidden arrow-down">
-                            <h3 class="card-header">EL251</h3>
-                            <h4 class="card-status-header card-status-header-red">Overdue and upcoming obligations</h4>
+                    <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
+                </div>
+            </div>
 
-                            <div class="card-body m-t-2">
-                                <dl class="dl-horizontal">
-                                    <dt>Name</dt>
-                                    <dd>Myakuja A</dd>
-
-                                    <dt>Type</dt>
-                                    <dd>Exploration License</dd>
+            <div class="card animated borderless hidden arrow-down">
+                <h3 class="card-header">SPL/2015/0034</h3>
+                <h4 class="card-status-header card-status-header-red">This license is in order</h4>
 
-                                    <dt>Status</dt>
-                                    <dd>Active</dd>
+                <div class="card-body m-t-2">
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd>Myakuja A</dd>
 
-                                    <dt>Owner</dt>
-                                    <dd>Peter Janali Mutie</dd>
+                        <dt>Type</dt>
+                        <dd>Exploration License</dd>
 
-                                    <dt>Commodities</dt>
-                                    <dd>Gemstones</dd>
-                                </dl>
+                        <dt>Status</dt>
+                        <dd>Active</dd>
 
-                                <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
-                            </div>
-                        </div>
+                        <dt>Owner</dt>
+                        <dd>Peter Janali Mutie</dd>
 
-                        <div class="card animated borderless hidden arrow-down">
-                            <h3 class="card-header">SPL/2015/0034</h3>
-                            <h4 class="card-status-header card-status-header-red">This license is in order</h4>
+                        <dt>Commodities</dt>
+                        <dd>Gemstones</dd>
+                    </dl>
 
-                            <div class="card-body m-t-2">
-                                <dl class="dl-horizontal">
-                                    <dt>Name</dt>
-                                    <dd>Myakuja A</dd>
+                    <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
+                </div>
+            </div>
+            <div class="card animated borderless hidden arrow-down">
+                <h3 class="card-header">EL251</h3>
+                <h4 class="card-status-header card-status-header-red">Overdue and upcoming obligations</h4>
 
-                                    <dt>Type</dt>
-                                    <dd>Exploration License</dd>
+                <div class="card-body m-t-2">
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd>Myakuja A</dd>
 
-                                    <dt>Status</dt>
-                                    <dd>Active</dd>
+                        <dt>Type</dt>
+                        <dd>Exploration License</dd>
 
-                                    <dt>Owner</dt>
-                                    <dd>Peter Janali Mutie</dd>
+                        <dt>Status</dt>
+                        <dd>Active</dd>
 
-                                    <dt>Commodities</dt>
-                                    <dd>Gemstones</dd>
-                                </dl>
+                        <dt>Owner</dt>
+                        <dd>Peter Janali Mutie</dd>
 
-                                <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
-                            </div>
-                        </div>
-                                            <div class="card animated borderless hidden arrow-down">
-                            <h3 class="card-header">EL251</h3>
-                            <h4 class="card-status-header card-status-header-red">Overdue and upcoming obligations</h4>
+                        <dt>Commodities</dt>
+                        <dd>Gemstones</dd>
+                    </dl>
 
-                            <div class="card-body m-t-2">
-                                <dl class="dl-horizontal">
-                                    <dt>Name</dt>
-                                    <dd>Myakuja A</dd>
+                    <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
+                </div>
+            </div>
 
-                                    <dt>Type</dt>
-                                    <dd>Exploration License</dd>
+            <div class="card animated borderless hidden arrow-down">
+                <h3 class="card-header">SPL/2015/0034</h3>
+                <h4 class="card-status-header card-status-header-orange">This license is in order</h4>
 
-                                    <dt>Status</dt>
-                                    <dd>Active</dd>
+                <div class="card-body m-t-2">
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd>Myakuja A</dd>
 
-                                    <dt>Owner</dt>
-                                    <dd>Peter Janali Mutie</dd>
+                        <dt>Type</dt>
+                        <dd>Exploration License</dd>
 
-                                    <dt>Commodities</dt>
-                                    <dd>Gemstones</dd>
-                                </dl>
+                        <dt>Status</dt>
+                        <dd>Active</dd>
 
-                                <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
-                            </div>
-                        </div>
+                        <dt>Owner</dt>
+                        <dd>Peter Janali Mutie</dd>
 
-                        <div class="card animated borderless hidden arrow-down">
-                            <h3 class="card-header">SPL/2015/0034</h3>
-                            <h4 class="card-status-header card-status-header-orange">This license is in order</h4>
+                        <dt>Commodities</dt>
+                        <dd>Gemstones</dd>
+                    </dl>
 
-                            <div class="card-body m-t-2">
-                                <dl class="dl-horizontal">
-                                    <dt>Name</dt>
-                                    <dd>Myakuja A</dd>
+                    <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
+                </div>
+            </div>
+            <div class="card animated borderless hidden arrow-down">
+                <h3 class="card-header">EL251</h3>
+                <h4 class="card-status-header card-status-header-red">Overdue and upcoming obligations</h4>
 
-                                    <dt>Type</dt>
-                                    <dd>Exploration License</dd>
+                <div class="card-body m-t-2">
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd>Myakuja A</dd>
 
-                                    <dt>Status</dt>
-                                    <dd>Active</dd>
+                        <dt>Type</dt>
+                        <dd>Exploration License</dd>
 
-                                    <dt>Owner</dt>
-                                    <dd>Peter Janali Mutie</dd>
+                        <dt>Status</dt>
+                        <dd>Active</dd>
 
-                                    <dt>Commodities</dt>
-                                    <dd>Gemstones</dd>
-                                </dl>
+                        <dt>Owner</dt>
+                        <dd>Peter Janali Mutie</dd>
 
-                                <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
-                            </div>
-                        </div>
-                                            <div class="card animated borderless hidden arrow-down">
-                            <h3 class="card-header">EL251</h3>
-                            <h4 class="card-status-header card-status-header-red">Overdue and upcoming obligations</h4>
+                        <dt>Commodities</dt>
+                        <dd>Gemstones</dd>
+                    </dl>
 
-                            <div class="card-body m-t-2">
-                                <dl class="dl-horizontal">
-                                    <dt>Name</dt>
-                                    <dd>Myakuja A</dd>
+                    <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
+                </div>
+            </div>
 
-                                    <dt>Type</dt>
-                                    <dd>Exploration License</dd>
+            <div class="card animated borderless hidden arrow-down">
+                <h3 class="card-header">SPL/2015/0034</h3>
+                <h4 class="card-status-header card-status-header-orange">This license is in order</h4>
 
-                                    <dt>Status</dt>
-                                    <dd>Active</dd>
+                <div class="card-body m-t-2">
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd>Myakuja A</dd>
 
-                                    <dt>Owner</dt>
-                                    <dd>Peter Janali Mutie</dd>
+                        <dt>Type</dt>
+                        <dd>Exploration License</dd>
 
-                                    <dt>Commodities</dt>
-                                    <dd>Gemstones</dd>
-                                </dl>
+                        <dt>Status</dt>
+                        <dd>Active</dd>
 
-                                <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
-                            </div>
-                        </div>
+                        <dt>Owner</dt>
+                        <dd>Peter Janali Mutie</dd>
 
-                        <div class="card animated borderless hidden arrow-down">
-                            <h3 class="card-header">SPL/2015/0034</h3>
-                            <h4 class="card-status-header card-status-header-orange">This license is in order</h4>
+                        <dt>Commodities</dt>
+                        <dd>Gemstones</dd>
+                    </dl>
 
-                            <div class="card-body m-t-2">
-                                <dl class="dl-horizontal">
-                                    <dt>Name</dt>
-                                    <dd>Myakuja A</dd>
-
-                                    <dt>Type</dt>
-                                    <dd>Exploration License</dd>
-
-                                    <dt>Status</dt>
-                                    <dd>Active</dd>
-
-                                    <dt>Owner</dt>
-                                    <dd>Peter Janali Mutie</dd>
-
-                                    <dt>Commodities</dt>
-                                    <dd>Gemstones</dd>
-                                </dl>
-
-                                <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
-                            </div>
-                        </div>
-                                    </div>
+                    <a class="card-single-action m-t-2 text-underline" href="l.licenses.single.html">View this license</a>
+                </div>
             </div>
         </div>
-    <!--</div>
+    </div>
+</div>
+<!--</div>
         </div>
     </div>-->

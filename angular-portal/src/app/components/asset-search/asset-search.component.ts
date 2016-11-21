@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AssetListModel } from '../../models/asset';
 import { AssetService } from '../../services/asset.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-asset-search',
@@ -14,12 +15,16 @@ export class AssetSearchComponent implements OnInit {
   public assets: Array<AssetListModel>;
   public service: AssetService;
   
-  constructor(service: AssetService) {
+  constructor(service: AssetService, private router: Router) {
       this.service = service;
   }
 
   ngOnInit() {
       this.assets = this.service.getAssetList()
+  }
+
+  onAssetSelection(selectedAsset:AssetListModel) {
+    this.router.navigate(['/AssetDetail', selectedAsset.Code]);
   }
 
 }
