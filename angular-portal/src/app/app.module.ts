@@ -13,10 +13,12 @@ import { AssetDetailsComponent } from './components/asset-details/asset-details.
 import { AssetDetailsCommentsComponent } from './components/asset-details-comments/asset-details-comments.component';
 import { AssetDetailsHistoryComponent } from './components/asset-details-history/asset-details-history.component';
 import { AssetDetailsOverviewComponent } from './components/asset-details-overview/asset-details-overview.component';
+import { AssetSearchFilterDropdownComponent } from './components/asset-search-filter-dropdown/asset-search-filter-dropdown.component';
+import { AssetSearchParametersComponent } from './components/asset-search-parameters/asset-search-parameters.component';
 
 @NgModule({
   declarations: [
-    AppComponent, AssetSearchComponent,AssetDetailsComponent, AssetDetailsCommentsComponent, AssetDetailsHistoryComponent, AssetDetailsOverviewComponent, HeaderComponent
+    AppComponent, AssetSearchComponent,AssetDetailsComponent, AssetDetailsCommentsComponent, AssetDetailsHistoryComponent, AssetDetailsOverviewComponent, AssetSearchFilterDropdownComponent, AssetSearchParametersComponent, HeaderComponent
   ],
   imports: [
     routing,

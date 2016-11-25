@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AssetListModel } from '../../models/asset';
 import { AssetService } from '../../services/asset.service';
 import { Router } from '@angular/router';
+import { AssetSearchParametersComponent } from './../asset-search-parameters/asset-search-parameters.component';
 
 @Component({
   selector: 'app-asset-search',
