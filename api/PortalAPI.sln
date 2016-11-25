@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalAPI", "PortalAPI\PortalAPI.csproj", "{98EC0371-9B97-4F57-9FA9-94C32F1780FF}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SpatialDimensionLibrary", "SpatialDimensionLibrary\SpatialDimensionLibrary.vbproj", "{14974A57-7C20-4FD8-80E6-81382C7F7003}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FCClassLibrary", "FCClassLibrary\FCClassLibrary.vbproj", "{809D71C5-FC36-4D55-9386-ED28CE946583}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{98EC0371-9B97-4F57-9FA9-94C32F1780FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98EC0371-9B97-4F57-9FA9-94C32F1780FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98EC0371-9B97-4F57-9FA9-94C32F1780FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14974A57-7C20-4FD8-80E6-81382C7F7003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14974A57-7C20-4FD8-80E6-81382C7F7003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14974A57-7C20-4FD8-80E6-81382C7F7003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14974A57-7C20-4FD8-80E6-81382C7F7003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{809D71C5-FC36-4D55-9386-ED28CE946583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{809D71C5-FC36-4D55-9386-ED28CE946583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{809D71C5-FC36-4D55-9386-ED28CE946583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{809D71C5-FC36-4D55-9386-ED28CE946583}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -257,6 +257,16 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FCClassLibrary\FCClassLibrary.vbproj">
+      <Project>{809d71c5-fc36-4d55-9386-ed28ce946583}</Project>
+      <Name>FCClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpatialDimensionLibrary\SpatialDimensionLibrary.vbproj">
+      <Project>{14974a57-7c20-4fd8-80e6-81382c7f7003}</Project>
+      <Name>SpatialDimensionLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
