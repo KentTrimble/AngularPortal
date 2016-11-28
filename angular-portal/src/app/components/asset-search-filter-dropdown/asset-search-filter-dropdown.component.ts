@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchFilter } from './../../models/SearchFilter';
 import { SearchFilters } from './../../models/SearchFilters';
 
 @Component({
@@ -10,6 +11,8 @@ export class AssetSearchFilterDropdownComponent implements OnInit {
 
   public t: any =  {a:1, b:2};
   public SearchFilters: SearchFilters;
+  public SelectedProperty: SearchFilter = null;
+  public SelectedPropertyID:string = '*';
 
   constructor() { }
 
@@ -18,4 +21,13 @@ export class AssetSearchFilterDropdownComponent implements OnInit {
     console.log(JSON.stringify(this.SearchFilters));
   }
 
+  showValues() {
+    return (this.SelectedPropertyID != '*')
+  }
+
+  onPropertySelectionChanged(newValue) {
+    this.SelectedProperty = this.SearchFilters.Filters.find((value:SearchFilter, index: number, obj: SearchFilter[])=>value.PropertyID == newValue);
+
+    this.SelectedPropertyID = newValue;
+  }
 }

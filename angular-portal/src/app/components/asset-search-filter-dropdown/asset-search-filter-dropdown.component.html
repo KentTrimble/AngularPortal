@@ -9,11 +9,14 @@
       </select>
 		</div>
 		<div class="form-group">
+			<select name="" class="form-control" (change)="onPropertySelectionChanged($event.target.value)">
+				<option *ngFor="let filter of SearchFilters.Filters" value="{{filter.PropertyID}}">{{filter.PropertyName}}</option>
+			</select>
+		</div>
+		<div class="form-group" *ngIf="SelectedPropertyID != '*'">
 			<select name="" class="form-control">
-                                      <option value="">Select a value</option>
-                                      <option value="active">Active</option>
-                                      <option value="active">Inactive</option>
-                                  </select>
+				<option *ngFor="let dropDownValue of this.SelectedProperty.DropDownValues" value="{{dropDownValue.Values}}">{{dropDownValue.Text}}</option>
+			</select>
 		</div>
 		<button class="btn btn-success btn-lg m-t-1">Add filter</button>
 	</div>
